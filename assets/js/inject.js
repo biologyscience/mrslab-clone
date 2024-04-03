@@ -10,8 +10,8 @@ fetch(navbar).then(x => x.text()).then((data) =>
     let relativePath = '';
     
     relativePath = relativePath + '../'.repeat(path.split('/').length - 3);
-    
-    data = data.replace('>|>', relativePath);
+
+    data = data.split('>|>').join(relativePath);
 
     document.querySelector('nav').innerHTML = data;
 });
